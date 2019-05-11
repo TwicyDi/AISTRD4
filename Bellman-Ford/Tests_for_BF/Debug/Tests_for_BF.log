@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  unittest1.cpp
+c:\users\диана\desktop\все\учеба\алгоритмы и структуры данных\4 семестр\bellman-ford\main\bf.cpp(43): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\диана\desktop\все\учеба\алгоритмы и структуры данных\4 семестр\bellman-ford\main\bf.cpp(45): warning C4018: <: несоответствие типов со знаком и без знака
+     Создается библиотека C:\Users\Диана\Desktop\все\учеба\алгоритмы и структуры данных\4 семестр\Bellman-Ford\Debug\Tests_for_BF.lib и объект C:\Users\Диана\Desktop\все\учеба\алгоритмы и структуры данных\4 семестр\Bellman-Ford\Debug\Tests_for_BF.exp
+  Tests_for_BF.vcxproj -> C:\Users\Диана\Desktop\все\учеба\алгоритмы и структуры данных\4 семестр\Bellman-Ford\Debug\Tests_for_BF.dll
