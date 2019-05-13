@@ -10,7 +10,7 @@ void read_file(map<string>*city)
 	fin.open("input.txt", ios::in);
 	string buf;
 	int id = 0;
-	cout << "Код и город:" << endl;
+	cout << "ГЉГ®Г¤ ГЁ ГЈГ®Г°Г®Г¤:" << endl;
 	do
 	{
 		int counter = 0;
@@ -32,7 +32,7 @@ void read_file(map<string>*city)
 
 	fin.close();
 	cout << endl;
-	cout << "Матрица цен:" << endl;
+	cout << "ГЊГ ГІГ°ГЁГ¶Г  Г¶ГҐГ­:" << endl;
 
 }
 
@@ -74,7 +74,7 @@ int **create_graph_matrix(map<string> city)
 string find_way(int **graph_table, size_t size, int from, int to, int &min)
 {
 		if (from == to)
-			throw out_of_range("Один и тот же город");
+			throw out_of_range("ГЋГ¤ГЁГ­ ГЁ ГІГ®ГІ Г¦ГҐ ГЈГ®Г°Г®Г¤");
 	
 	string* cities = new string[size]; 
 	const int inf = 10000;
@@ -93,31 +93,11 @@ string find_way(int **graph_table, size_t size, int from, int to, int &min)
 				}
 		if (!flag) break;
 	}
-	cout << "Минимальная цена " << cost[to] << endl;
+	cout << "ГЊГЁГ­ГЁГ¬Г Г«ГјГ­Г Гї Г¶ГҐГ­Г  " << cost[to] << endl;
 	min = cost[to];
 	string city;
 	city += cities[from];
 	city += cities[to];
 
 	return city;
-}
-
-void showing_the_best_way(string cost, map<string> city)
-{
-	size_t found = cost.find(';');
-
-	cost.erase(0, found + 1);
-	while (true)
-	{
-		found = cost.find(';');
-		if (cost.length() != 1)
-			cout << city.find_city(stoi(cost.substr(0, found))) << " -> ";		
-		else
-		{
-			cout << city.find_city(stoi(cost.substr(0, found)));
-			break;
-		}
-		cost.erase(0, found + 1);
-	}
-
 }
