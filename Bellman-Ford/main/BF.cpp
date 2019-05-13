@@ -71,33 +71,24 @@ int **create_graph_matrix(map<string> city)
 	return matrix;
 }
 
-string find_way(int **graph_table, size_t size, int from, int to, int &min)
+void find_way(int **graph_table, size_t size, int from, int to, int &min)
 {
 		if (from == to)
-			throw out_of_range("Îäèí è òîò æå ãîðîä");
+			throw out_of_range("Один и тот же город");
 	
-	string* cities = new string[size]; 
 	const int inf = 10000;
 	vector<int> cost(size, inf);
 	cost[from] = 0;
-	for (;;)
+	for (size_t m=0;m<size;m++)
 	{
-		bool flag = false;
 		for(size_t i=0;i<size;i++)
 			for(size_t j=0;j<size;j++)
 				if ((cost[i] + graph_table[j][i] < cost[j]) && (graph_table[j][i] > 0))
 				{
 					cost[j] = cost[i] + graph_table[j][i];
-					cities[j] = cities[i] + ';' + to_string(j);
-					flag = true;
 				}
-		if (!flag) break;
 	}
-	cout << "Ìèíèìàëüíàÿ öåíà " << cost[to] << endl;
+	cout << "Минимальная цена " << cost[to] << endl;
 	min = cost[to];
-	string city;
-	city += cities[from];
-	city += cities[to];
-
-	return city;
 }
+
